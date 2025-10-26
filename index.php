@@ -52,6 +52,12 @@
                 }
             ?>
         </section>
+        <section id="progress">
+            <h1>Progress</h1>
+        </section>
+        <section id="highscore">
+            <h1>High Score</h1>
+        </section>
     </main>
 </body>
 </html>
