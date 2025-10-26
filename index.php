@@ -41,7 +41,15 @@
                 <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
                 <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
             </div>
+            <input class="button" type="submit" name="check" value="Check Answers">
         </form>
+        <?php
+            $answer = null;
+
+            if(iseet($_POST["check"])){
+                
+            }
+        ?>
     </main>
 </body>
 </html>
