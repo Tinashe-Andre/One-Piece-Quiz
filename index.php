@@ -11,45 +11,47 @@
 </head>
 <body>
     <main>
-        <h1>Test Your One Piece Knowledge!</h1>
-        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
-            <div class="question">
-                <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
-            </div>
-            <div class="question">
-                <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
-            </div>
-            <div class="question">
-                <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
-            </div>
-            <div class="question">
-                <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
-            </div>
-            <input class="button" type="submit" name="check" value="Check Answers">
-        </form>
-        <?php
-            $answer = null;
+        <section id="quiz">
+            <h1>Test Your One Piece Knowledge!</h1>
+            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+                <div class="question">
+                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
+                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
+                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                </div>
+                <div class="question">
+                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
+                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
+                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                </div>
+                <div class="question">
+                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
+                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
+                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                </div>
+                <div class="question">
+                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
+                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
+                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                </div>
+                <input class="button" type="submit" name="check" value="Check Answers">
+            </form>
+            <?php
+                $answer = null;
 
-            if(iseet($_POST["check"])){
-                
-            }
-        ?>
+                if(iseet($_POST["check"])){
+                    
+                }
+            ?>
+        </section>
     </main>
 </body>
 </html>
