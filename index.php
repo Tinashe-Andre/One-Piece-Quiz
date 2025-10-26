@@ -22,32 +22,32 @@
                     <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
                 </div>
                 <div class="question">
-                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                    <label>Who is the Navigator of the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="navigator"> Black Leg Sanji <br>
+                    <input type="radio" name="navigator"> Dr. Chopper <br>
+                    <input type="radio" name="navigator"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="navigator"> Cat Burgler Nami <br>
                 </div>
                 <div class="question">
-                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                    <label>Who has the highest bounty in the Straw Hat Pirates?</label><br>
+                    <input type="radio" name="bounty"> Pirate Hunter Zoro <br>
+                    <input type="radio" name="bounty"> Monkey D. Luffy <br>
+                    <input type="radio" name="bounty">  First Son of the Sea Jinbe<br>
+                    <input type="radio" name="bounty"> Cyborg Franky <br>
                 </div>
                 <div class="question">
-                    <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
-                    <input type="radio" name="vice-captin"> Black Leg Sanji <br>
-                    <input type="radio" name="vice-captin"> Dr. Chopper <br>
-                    <input type="radio" name="vice-captin"> Pirate Hunter Zoro <br>
-                    <input type="radio" name="vice-captin"> Cat Burgler Nami <br>
+                    <label>Who is the cutest Straw Hat Pirate?</label><br>
+                    <input type="radio" name="cutest"> Robin <br>
+                    <input type="radio" name="cutest"> Nami <br>
+                    <input type="radio" name="cutest"> Ussop <br>
+                    <input type="radio" name="cutest"> CChopper <br>
                 </div>
                 <input class="button" type="submit" name="check" value="Check Answers">
             </form>
             <?php
                 $answer = null;
 
-                if(iseet($_POST["check"])){
+                if(isset($_POST["check"])){
                     
                 }
             ?>
