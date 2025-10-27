@@ -44,7 +44,10 @@
             </form>
             <?php
                 $points = 0;
-                $message = "";
+                $message1 = "";
+                $message2 = "";
+                $message3 = "";
+                $message4 = "";
 
                 if(isset($_POST["check"])){
                     $vice_cap_ans = $_POST["vice-captin"];
@@ -54,30 +57,30 @@
 
                     if($vice_cap_ans == "Zoro"){
                         $points++;
-                        $message = "Zoro is the Vice Captin!";
+                        $message1 = "Zoro is the Vice Captin!";
                     } else{
-                        $message = "{$vice_cap_ans} is NOT the Vice Captin :(";
+                        $message1 = "{$vice_cap_ans} is NOT the Vice Captin :(";
                     }
 
                     if($navigator_ans == "Nami"){
                         $points++;
-                        $message = "Nami is the Navigator!";
+                        $message2 = "Nami is the Navigator!";
                     } else{
-                        $message = "{$vice_cap_ans} is NOT the Navigator :(";
+                        $message2 = "{$vice_cap_ans} is NOT the Navigator :(";
                     }
 
                     if($navigator_ans == "Luffy"){
                         $points++;
-                        $message = "Luffy does have the highest bounty!";
+                        $message3 = "Luffy does have the highest bounty!";
                     } else{
-                        $message = "{$vice_cap_ans} does NOT the highest bounty :(";
+                        $message3 = "{$vice_cap_ans} does NOT the highest bounty :(";
                     }
 
                     if($navigator_ans == "Chopper"){
                         $points++;
-                        $message = "Chopper is the cutest of course";
+                        $message4 = "Chopper is the cutest of course";
                     } else{
-                        $message = "{$vice_cap_ans} is not the cutest :(";
+                        $message4 = "{$vice_cap_ans} is not the cutest :(";
                     }
                 }
             ?>
@@ -85,7 +88,16 @@
         <section id="progress">
             <h1>Progress</h1>
             <div class="progress-board">
-                <p><?php echo $message?></p>
+                <p><?php echo $message1?></p>
+                <p>Score: <?php echo $points?></p>
+
+                <p><?php echo $message2?></p>
+                <p>Score: <?php echo $points?></p>
+
+                <p><?php echo $message3?></p>
+                <p>Score: <?php echo $points?></p>
+
+                <p><?php echo $message4?></p>
                 <p>Score: <?php echo $points?></p>
             </div>
         </section>
