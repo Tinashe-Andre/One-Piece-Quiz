@@ -44,43 +44,18 @@
             </form>
             <?php
                 $points = 0;
-                $message1 = "";
-                $message2 = "";
-                $message3 = "";
-                $message4 = "";
 
                 if(isset($_POST["check"])){
-                    $vice_cap_ans = $_POST["vice-captin"];
-                    $navigator_ans = $_POST["navigator"];
-                    $bounty_ans = $_POST["bounty"];
-                    $cutest_ans = $_POST["cutest"];
+                    $answers = array("Zoro", "Nami", "Luffy", "Chopper");
+                    $user_answers = array($_POST["vice-captin"], $_POST["navigator"], $_POST["bounty"], $_POST["cutest"]);
 
-                    if($vice_cap_ans == "Zoro"){
-                        $points++;
-                        $message1 = "Zoro is the Vice Captin!";
-                    } else{
-                        $message1 = "{$vice_cap_ans} is NOT the Vice Captin :(";
-                    }
-
-                    if($navigator_ans == "Nami"){
-                        $points++;
-                        $message2 = "Nami is the Navigator!";
-                    } else{
-                        $message2 = "{$vice_cap_ans} is NOT the Navigator :(";
-                    }
-
-                    if($navigator_ans == "Luffy"){
-                        $points++;
-                        $message3 = "Luffy does have the highest bounty!";
-                    } else{
-                        $message3 = "{$vice_cap_ans} does NOT the highest bounty :(";
-                    }
-
-                    if($navigator_ans == "Chopper"){
-                        $points++;
-                        $message4 = "Chopper is the cutest of course";
-                    } else{
-                        $message4 = "{$vice_cap_ans} is not the cutest :(";
+                    function check_answer($user_answer, $answer){
+                        if($user_answer == $answer){
+                            $points++;
+                            echo"{$answer} is CORRECT! <br>";
+                        } else{
+                            echo"{$user_answer} is INCORRECT! :( <br>";
+                        }
                     }
                 }
             ?>
@@ -88,17 +63,12 @@
         <section id="progress">
             <h1>Progress</h1>
             <div class="progress-board">
-                <p><?php echo $message1?></p>
-                <p>Score: <?php echo $points?></p>
-
-                <p><?php echo $message2?></p>
-                <p>Score: <?php echo $points?></p>
-
-                <p><?php echo $message3?></p>
-                <p>Score: <?php echo $points?></p>
-
-                <p><?php echo $message4?></p>
-                <p>Score: <?php echo $points?></p>
+                <?php 
+                    for($i = 0; $i < 4; $i++){
+                        echo check_answer($user_answers[$i], $answers[$i]);
+                        echo "Points: " . $points;
+                    }
+                ?>
             </div>
         </section>
         <section id="highscore">
