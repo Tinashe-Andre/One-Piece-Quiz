@@ -52,30 +52,30 @@
                 <?php 
                     if(isset($_POST["check"])){
                         $answers = array("Zoro", "Nami", "Luffy", "Chopper");
-                        $user_answers = array($_POST["vice-captin"], 
-                                              $_POST["navigator"], 
-                                              $_POST["bounty"], 
-                                              $_POST["cutest"]);
+                        $user_answers = array($_POST["vice-captin"] ?? '', 
+                                              $_POST["navigator"] ?? '', 
+                                              $_POST["bounty"] ?? '', 
+                                              $_POST["cutest"] ?? '');
 
                         function check_answer($user_answer, $correct_answer){
-                            if($user_answer === $answer){
+                            if($user_answer === $correct_answer){
                                 return["msg" => "{$correct_answer} is CORRECT! <br>", "point" => 1];
                             } else{
                                 return["msg" => "{$user_answer} is INCORRECT! <br>", "point" => 0];
                             }
-
-                            $feedback = "";
-                            $points = 0;
-                            
-                            for($i = 0; $i < $count($answers); $i++){
-                                $result = check_answer($user_answers[$i], $answers[$i]);
-                                $feedback .= $result["msg"];
-                                $points += $result["point"];
-                            }
-
-                            echo $feedback;
-                            echo"<strong>Points: $points</strong>";
                         }
+
+                        $feedback = "";
+                        $points = 0;
+
+                        for($i = 0; $i < count($user_answers); $i++){
+                            $result = check_answer($user_answers[$i], $answers[$i]);
+                            $feedback .= $result["msg"];
+                            $points += $result["point"];
+                        }
+
+                        echo $feedback;
+                        echo"<strong>Points: $points</strong>";
                     }
                 ?>
             </div>
