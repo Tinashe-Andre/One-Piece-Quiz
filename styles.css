@@ -72,7 +72,7 @@ main h1{
 }
 
 .question{
-    color: #fff;
+    color: orange;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
@@ -82,8 +82,8 @@ main h1{
 .button{
     display: block;
     margin:  0 auto;
-    background-color: #f44336;
-    border: 1px solid #fff;
+    background-color: orange;
+    border: 2px solid #fff;
     border-radius: 15px;
     color: #fff;
     padding: 10px;
@@ -91,8 +91,8 @@ main h1{
 
 .button:hover{
         background-color: #fff;
-            color: #f44336;
-              border: 1px solid #f44336;
+            color: orange;
+              border: 2px solid orange;
 }
 
 /*--Progress Section--*/
@@ -103,7 +103,7 @@ main h1{
 }
 
 .progress-board{
-    color: #fff;
+    color: khaki;
     background-color: transparent;
     margin: 20px auto;
     width: 50%;
@@ -114,10 +114,82 @@ main h1{
     padding: 15px;
 }
 
+/*--High Score Form--*/
+
+.highscore-form{
+    display: block;
+    color: greenyellow;
+    background-color: transparent;
+    margin: 20px auto;
+    width: 25%;
+    height: auto;
+    border: 2px solid greenyellow;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+}
+
+.highscore-form .text-box {
+    color: greenyellow;
+    background-color: transparent;
+    border: 2px solid greenyellow;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.highscore-form .button{
+    color: greenyellow;
+    background-color: transparent;
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+    margin: 5px auto;
+}
+
+.highscore-form .button:hover{
+    background-color: greenyellow;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 /*--High Score Section--*/
 
 #highscore h1{
     color: #fff;
+    font-size: 3rem;
+}
+
+caption{
+    font-size: 2rem;
+    padding-bottom: 10px;
+}
+
+table{
+    color: #fff;
+    margin: 20px auto;
+    border: 2px solid #fff;
+    width: 50%;
+    text-align: center;
+    border-radius: 15px;
+}
+
+
+#highscore input{
+    display: block;
+    margin: 20px auto;
+    display: block;
+    margin:  0 auto;
+    background-color: #f44336;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    color: #fff;
+    padding: 10px;
+}
+
+#highscore input:hover{
+    color: #f44336;
+    background-color: #fff;
+    border: 2px solid #f44336;
 }
 
 footer{

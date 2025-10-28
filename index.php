@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>One Piece Quiz</title>
     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <?php include("header.html"); ?>
@@ -79,11 +80,45 @@
                     }
                 ?>
             </div>
+            <div class="highscore-form">
+                <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+                    <h2>NEW HIGH SCORE</h2>
+                    <label>Enter your initials champ:</label><br>
+                    <input class="text-box" type="text" name="initials"><br>
+                    <input class="button" type="submit" name="add-to-board" value="Add"><br>
+                </form>
+                
+            </div>
         </section>
 
         <!--HIGH SCORE SECTION-->
         <section id="highscore">
-            <h1>High Score</h1>
+            <h1>High Scores</h1>
+
+            <table>
+                <caption><i class="fa-solid fa-star"></i> THE 3 BEST PLAYERS <i class="fa-solid fa-star"></i></caption>
+                <tr>
+                    <th>Rank</th>
+                    <th>Score</th>
+                    <th>Initial</th>
+                </tr>
+                <tr>
+                    <td>1st</td>
+                    <td>4</td>
+                    <td>TAM</td>
+                </tr>
+                <tr>
+                    <td>2nd</td>
+                    <td>3</td>
+                    <td>SFC</td>
+                </tr>
+                <tr>
+                    <td>3rd</td>
+                    <td>2</td>
+                    <td>JTN</td>
+                </tr>
+            </table>
+            <input type="submit" name="reset" value="RESET">
         </section>
     </main>
     <?php include("footer.html"); ?>
