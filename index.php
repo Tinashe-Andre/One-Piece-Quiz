@@ -9,9 +9,10 @@
 <body>
     <?php include("header.html"); ?>
     <main>
+        <!--QUIZ SECTION-->
         <section id="quiz">
             <h1>Test Your One Piece Knowledge!</h1>
-            <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
                 <div class="question">
                     <label>Who is the Vice Captin of the Straw Hat Pirates?</label><br>
                     <input type="radio" name="vice-captin" value="Sanji"> Black Leg Sanji <br>
@@ -42,35 +43,45 @@
                 </div>
                 <input class="button" type="submit" name="check" value="Check Answers">
             </form>
-            <?php
-                $points = 0;
-
-                if(isset($_POST["check"])){
-                    $answers = array("Zoro", "Nami", "Luffy", "Chopper");
-                    $user_answers = array($_POST["vice-captin"], $_POST["navigator"], $_POST["bounty"], $_POST["cutest"]);
-
-                    function check_answer($user_answer, $answer){
-                        if($user_answer == $answer){
-                            $points++;
-                            echo"{$answer} is CORRECT! <br>";
-                        } else{
-                            echo"{$user_answer} is INCORRECT! :( <br>";
-                        }
-                    }
-                }
-            ?>
         </section>
+
+        <!--PROGRESS SECTION-->
         <section id="progress">
             <h1>Progress</h1>
             <div class="progress-board">
                 <?php 
-                    for($i = 0; $i < 4; $i++){
-                        echo check_answer($user_answers[$i], $answers[$i]);
-                        echo "Points: " . $points;
+                    if(isset($_POST["check"])){
+                        $answers = array("Zoro", "Nami", "Luffy", "Chopper");
+                        $user_answers = array($_POST["vice-captin"], 
+                                              $_POST["navigator"], 
+                                              $_POST["bounty"], 
+                                              $_POST["cutest"]);
+
+                        function check_answer($user_answer, $correct_answer){
+                            if($user_answer === $answer){
+                                return["msg" => "{$correct_answer} is CORRECT! <br>", "point" => 1];
+                            } else{
+                                return["msg" => "{$user_answer} is INCORRECT! <br>", "point" => 0];
+                            }
+
+                            $feedback = "";
+                            $points = 0;
+                            
+                            for($i = 0; $i < $count($answers); $i++){
+                                $result = check_answer($user_answers[$i], $answers[$i]);
+                                $feedback .= $result["msg"];
+                                $points += $result["point"];
+                            }
+
+                            echo $feedback;
+                            echo"<strong>Points: $points</strong>";
+                        }
                     }
                 ?>
             </div>
         </section>
+
+        <!--HIGH SCORE SECTION-->
         <section id="highscore">
             <h1>High Score</h1>
         </section>
