@@ -1,3 +1,5 @@
+<!--Written by: Tdre @2025-->
+
 <?php
 session_start(); // start session before ANY HTML output
 ?>
