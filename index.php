@@ -51,6 +51,7 @@
             <h1>Progress</h1>
             <div class="progress-board">
                 <?php 
+                    //checking users answers
                     if(isset($_POST["check"])){
                         $answers = array("Zoro", "Nami", "Luffy", "Chopper");
                         $user_answers = array($_POST["vice-captin"] ?? '', 
@@ -69,6 +70,7 @@
                         $feedback = "";
                         $points = 0;
 
+                        //displaying the feedback
                         for($i = 0; $i < count($user_answers); $i++){
                             $result = check_answer($user_answers[$i], $answers[$i]);
                             $feedback .= $result["msg"];
@@ -80,7 +82,24 @@
                     }
                 ?>
             </div>
-            <div class="highscore-form">
+
+            <?php
+            //hiding the high score form
+            $show_highscore_form = false;
+
+            if(isset($_POST["check"])){ //shwoing it when new highscore is obtained
+                if($points >= 3){
+                    $show_highscore_form = true;
+                }
+            }
+
+            if(isset($_POST["add-to-board"])){
+                $initials = $_POST["initials"];
+                echo"<p style='color:greenyellow; text-align: center;'>High score saved: $initials</p>";
+            }
+            ?>
+
+            <div class="highscore-form" style="display: <?php echo $show_highscore_form ? 'block' : 'none'; ?>">
                 <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
                     <h2>NEW HIGH SCORE</h2>
                     <label>Enter your initials champ:</label><br>
@@ -92,6 +111,7 @@
         </section>
 
         <!--HIGH SCORE SECTION-->
+
         <section id="highscore">
             <h1>High Scores</h1>
 
